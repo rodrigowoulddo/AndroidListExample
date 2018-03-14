@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Unasus_selecao2</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sing_up">SingUpActivity</string>
+    <string name="title_activity_groceries">GroceriesActivity</string>
+</resources>

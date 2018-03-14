@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.rodrigofg.unasus_selecao2.SingUpActivity"
+    tools:showIn="@layout/activity_sing_up">
+
+    <ImageView
+        android:id="@+id/imgShopSignUp"
+        android:layout_width="120dp"
+        android:layout_height="75dp"
+        android:src="@drawable/online_store"
+        app:srcCompat="@drawable/online_store"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <EditText
+        android:id="@+id/txtEmailSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email Aderess"
+        android:inputType="textMultiLine|textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <EditText
+        android:id="@+id/txtPasswordSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="119dp"
+        android:layout_height="51dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="275dp"
+        tools:text="sign up" />
+</android.support.constraint.ConstraintLayout>
