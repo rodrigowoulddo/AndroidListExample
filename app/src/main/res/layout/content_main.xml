@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.rodrigofg.unasus_selecao2.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="com.example.rodrigofg.unasus_selecao2.Controle.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+    <ImageView
+        android:id="@+id/imgShopSignIn"
+        android:layout_width="120dp"
+        android:layout_height="75dp"
+        android:src="@drawable/online_store"
+        app:srcCompat="@drawable/online_store"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="44dp"
+        android:layout_gravity="center"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        />
 
     <EditText
         android:id="@+id/txtEmailSignIn"
@@ -17,7 +40,8 @@
         android:inputType="textMultiLine|textPersonName"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteY="143dp"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/txtPasswordSignIn"
@@ -28,7 +52,13 @@
         android:inputType="textPersonName"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="199dp"
+        android:layout_gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
 
     <Button
         android:id="@+id/btnSignIn"
@@ -37,7 +67,15 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="275dp"
-        tools:text="Sign in" />
+        tools:text="Sign in"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        android:onClick="btnSignInClick"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        />
 
     <TextView
         android:id="@+id/btnSignUpPage"
@@ -47,16 +85,10 @@
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="348dp"
         tools:ignore="MissingConstraints"
-        android:onClick="btnSignInClick"/>
+        android:onClick="btnSignUpClick"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"/>
 
-    <ImageView
-        android:id="@+id/imgShopSignIn"
-        android:layout_width="120dp"
-        android:layout_height="75dp"
-        android:src="@drawable/online_store"
-        app:srcCompat="@drawable/online_store"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="44dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

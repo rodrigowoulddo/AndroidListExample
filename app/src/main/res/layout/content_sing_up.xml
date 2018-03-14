@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.rodrigofg.unasus_selecao2.SingUpActivity"
-    tools:showIn="@layout/activity_sing_up">
+    tools:context="com.example.rodrigofg.unasus_selecao2.Controle.SingUpActivity"
+    tools:showIn="@layout/activity_sing_up"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
 
     <ImageView
         android:id="@+id/imgShopSignUp"
@@ -16,7 +22,13 @@
         app:srcCompat="@drawable/online_store"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="44dp" />
+        tools:layout_editor_absoluteY="44dp"
+        android:layout_gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        />
 
     <EditText
         android:id="@+id/txtEmailSignUp"
@@ -27,7 +39,8 @@
         android:inputType="textMultiLine|textPersonName"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="143dp" />
+        tools:layout_editor_absoluteY="143dp"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/txtPasswordSignUp"
@@ -38,7 +51,13 @@
         android:inputType="textPersonName"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="199dp"
+        android:layout_gravity="center"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -47,5 +66,8 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="275dp"
-        tools:text="sign up" />
-</android.support.constraint.ConstraintLayout>
+        tools:text="sign up"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        />
+</LinearLayout>

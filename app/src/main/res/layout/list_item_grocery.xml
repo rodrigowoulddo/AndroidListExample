@@ -6,7 +6,8 @@
     android:background="#FFFFFF"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="8dp">
 
 
     <TextView

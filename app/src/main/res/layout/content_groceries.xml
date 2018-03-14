@@ -1,35 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.rodrigofg.unasus_selecao2.GroceriesActivity"
-    tools:showIn="@layout/activity_groceries">
+    tools:context="com.example.rodrigofg.unasus_selecao2.Controle.GroceriesActivity"
+    tools:showIn="@layout/activity_groceries"
+    android:orientation="vertical"
+    >
 
-    <EditText
-        android:id="@+id/txtGrocery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter a grocery item"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="27dp" />
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:text="Add"
-        tools:layout_editor_absoluteX="254dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:layout_width="360dp"
+        android:layout_gravity="center"
+        android:padding="4dp">
+
+        <EditText
+            android:id="@+id/txtGrocery"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter a grocery item"
+            android:inputType="textPersonName"
+            />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            />
+
+    </LinearLayout>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        />
 
     <ListView
         android:id="@+id/listGroceries"
         android:layout_width="368dp"
         android:layout_height="420dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="83dp" />
-</android.support.constraint.ConstraintLayout>
+        tools:layout_editor_absoluteY="83dp"
+        android:padding="4dp"/>
+
+</LinearLayout>
