@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnSignUpClick(View view){
-            abrirTelaSignUp();
+        abrirTelaSignUp();
     }
 
-    public void btnSignInClick(View view){
+    public void btnSignInClick(View view) {
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
 
-        if(verificarCredenciais(email, password)){
+        if (verificarCredenciais(email, password)) {
             abrirTelaGroceries();
             resetarCampos();
         }
@@ -69,14 +69,14 @@ public class MainActivity extends AppCompatActivity {
         List<Usuario> listaUsuarios = Usuario.buscarUsuariosCadastrados(this);
         Usuario usuarioLogando = criarUsuario();
 
-        if(listaUsuarios != null){
+        if(!listaUsuarios.isEmpty()){
 
             for (Usuario possivelUsuario: listaUsuarios) {
                 if(possivelUsuario.getEmail().equals(usuarioLogando.getEmail()) && possivelUsuario.getPassword().equals(usuarioLogando.getPassword()))
                     return true;
             }
 
-            mostrarMsg("The password you typed is not correct!");
+            mostrarMsg("The user or password you typed is not correct!");
 
         }
 

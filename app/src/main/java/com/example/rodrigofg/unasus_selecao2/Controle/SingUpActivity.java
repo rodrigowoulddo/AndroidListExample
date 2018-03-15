@@ -80,6 +80,9 @@ public class SingUpActivity extends AppCompatActivity {
 
     private boolean verificaExistencia(Usuario novoUsuario, List<Usuario> listaUsuarios) {
 
+        if(listaUsuarios == null)
+            return false;
+
         for (Usuario usuarioCadastrado : listaUsuarios) {
             if(usuarioCadastrado.getEmail().equals(novoUsuario.getEmail()))
                 return true;
