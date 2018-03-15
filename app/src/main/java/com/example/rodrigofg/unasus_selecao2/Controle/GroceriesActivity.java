@@ -34,13 +34,14 @@ public class GroceriesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         setTitle("Groceries");
+        instanciaComponentes();
+        carregarGroceriesCadastradas();
+    }
 
-        //INSTÂNCIAS
+    private void instanciaComponentes() {
         listaGroceries = (ListView) findViewById(R.id.listGroceries);
         txtGrocery = (EditText) findViewById(R.id.txtGrocery);
         btnAdd = (Button) findViewById(R.id.btnAdd);
-
-        carregarGroceriesCadastradas();
     }
 
     public void btnAddClick(View view){
@@ -69,6 +70,7 @@ public class GroceriesActivity extends AppCompatActivity {
             carregarGroceriesCadastradas();
         }
     }
+
     private void resetarCampos() {
         txtGrocery.setText("");
     }
@@ -100,11 +102,12 @@ public class GroceriesActivity extends AppCompatActivity {
 
     public void btnDeletarClick(View view) {
 
+        //Busca o nome da grocery na própria view clicada
         view = (View) view.getParent();
-        String nomeGrogery = ((TextView) view.findViewById(R.id.txtGrocery)).getText().toString();
+        String nomeGrocery = ((TextView) view.findViewById(R.id.txtGrocery)).getText().toString();
 
         Grocery grocery = new Grocery();
-        grocery.setNome(nomeGrogery);
+        grocery.setNome(nomeGrocery);
 
         removeGrocery(grocery);
     }

@@ -29,12 +29,13 @@ public class SingUpActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         setTitle("Sign up");
+        instanciaComponentes();
+    }
 
-        /*INSTÂNCIAS*/
+    private void instanciaComponentes() {
         txtEmail = (EditText) findViewById(R.id.txtEmailSignUp);
         txtPassword = (EditText) findViewById(R.id.txtPasswordSignUp);
         btnSingUp = (Button) findViewById(R.id.btnSignUp);
-
     }
 
     public void btnSignUpClick(View view){
@@ -44,17 +45,17 @@ public class SingUpActivity extends AppCompatActivity {
     private void efetuarSignUp(){
 
         if(verificarCampos()){
-            if(atualizarRegistro(criarUsuario()))
+            if(atualizarRegistro(criarUsuario())){
                 resetarCampos();
-        }else{
+                mostrarMsg("Sucess!");
+            }
+        }else
             mostrarMsg("Insert the information to sign up!");
-        }
     }
 
     private void resetarCampos() {
         txtEmail.setText("");
         txtPassword.setText("");
-        mostrarMsg("Sucess!");
     }
 
     private boolean atualizarRegistro(Usuario usuario){

@@ -10,10 +10,6 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by rodrigofg on 14/03/2018.
- */
-
 public class Usuario {
 
     private String email;
@@ -38,9 +34,7 @@ public class Usuario {
     public static List<Usuario> buscarUsuariosCadastrados(Activity activity){
 
         // Persistência de dados feita em Shared Preferences
-        SharedPreferences sharedPref = activity.getSharedPreferences(
-                "GROCERIES", Context.MODE_PRIVATE);
-
+        SharedPreferences sharedPref = activity.getSharedPreferences("GROCERIES", Context.MODE_PRIVATE);
         String jsonUsuarios = sharedPref.getString("USUARIOS","0");
 
         if(jsonUsuarios.equals("0"))
@@ -55,9 +49,7 @@ public class Usuario {
     public static void atualizarUsuariosCadastrados(Activity activity, List<Usuario> novalistaUsuarios) {
 
         // Persistência de dados feita em Shared Preferences
-        SharedPreferences sharedPref = activity.getSharedPreferences(
-                "GROCERIES", Context.MODE_PRIVATE);
-
+        SharedPreferences sharedPref = activity.getSharedPreferences("GROCERIES", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String jsonUsuarios = gson.toJson(novalistaUsuarios);
 

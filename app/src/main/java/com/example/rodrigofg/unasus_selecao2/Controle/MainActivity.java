@@ -31,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         setTitle("Sign in");
+        instanciaComponentes();
+    }
 
-        /*INSTÂNCIAS*/
+    private void instanciaComponentes() {
         txtEmail = (EditText) findViewById(R.id.txtEmailSignIn);
         txtPassword = (EditText) findViewById(R.id.txtPasswordSignIn);
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
         btnSignUp = (TextView) findViewById(R.id.btnSignUpPage);
-
     }
 
     public void btnSignUpClick(View view){
@@ -45,10 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnSignInClick(View view) {
-        String email = txtEmail.getText().toString();
-        String password = txtPassword.getText().toString();
 
-        if (verificarCredenciais(email, password)) {
+        if (verificarCredenciais(criarUsuario())) {
             abrirTelaGroceries();
             resetarCampos();
         }
@@ -59,17 +58,16 @@ public class MainActivity extends AppCompatActivity {
         txtPassword.setText("");
     }
 
-    private boolean verificarCredenciais(String email, String password) {
+    private boolean verificarCredenciais(Usuario usuarioLogando) {
 
-        if(email.equals("") || password.equals("")){
+        if(usuarioLogando.getEmail().equals("") || usuarioLogando.getPassword().equals("")){
             mostrarMsg("Insert the right information to sign in!");
             return false;
         }
 
         List<Usuario> listaUsuarios = Usuario.buscarUsuariosCadastrados(this);
-        Usuario usuarioLogando = criarUsuario();
 
-        if(!listaUsuarios.isEmpty()){
+        if(listaUsuarios != null ){
 
             for (Usuario possivelUsuario: listaUsuarios) {
                 if(possivelUsuario.getEmail().equals(usuarioLogando.getEmail()) && possivelUsuario.getPassword().equals(usuarioLogando.getPassword()))
@@ -78,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
             mostrarMsg("The user or password you typed is not correct!");
 
+        }else{
+            mostrarMsg("The user or password you typed is not correct!");
         }
 
         return false;
