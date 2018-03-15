@@ -4,7 +4,7 @@
 * **Plataforma:** Android
 * **API:** 26
 * **Persistância de dados:** Local
-* **Idioma da aplicação:** Inglês
+* **Idioma da aplicação:** Inglês (UK)
 * **Idioma do código:** Portugês(BR)
 
 Este aplicativo android foi desenvolvido para o processo de seleção UNA-SUS (edital 2018/1), para a vaga de desenvolvedor mobile. 
