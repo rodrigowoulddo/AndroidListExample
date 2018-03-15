@@ -9,86 +9,93 @@
     tools:showIn="@layout/activity_main"
     android:orientation="vertical">
 
-    <Space
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
+        android:layout_margin="30dp"
+        android:background="#FFFFFF"
+        >
 
-    <ImageView
-        android:id="@+id/imgShopSignIn"
-        android:layout_width="120dp"
-        android:layout_height="75dp"
-        android:src="@drawable/online_store"
-        app:srcCompat="@drawable/online_store"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="44dp"
-        android:layout_gravity="center"
-        />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        />
+        <ImageView
+            android:id="@+id/imgShopSignIn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/online_store"
+            app:srcCompat="@drawable/online_store"
+            android:layout_gravity="center"
+            />
 
-    <EditText
-        android:id="@+id/txtEmailSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email Aderess"
-        android:inputType="textMultiLine|textPersonName"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="143dp"
-        android:layout_gravity="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
-    <EditText
-        android:id="@+id/txtPasswordSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="199dp"
-        android:layout_gravity="center"/>
+        <EditText
+            android:id="@+id/txtEmailSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email Aderess"
+            android:inputType="textMultiLine|textPersonName"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="143dp"
+            android:layout_gravity="center"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        />
+        <EditText
+            android:id="@+id/txtPasswordSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="199dp"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            />
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="119dp"
-        android:layout_height="51dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="275dp"
-        tools:text="Sign in"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_gravity="center"
-        android:onClick="btnSignInClick"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        />
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="119dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:onClick="btnSignInClick"
+            android:text="Sign in"
+            android:textColor="@color/colorPrimaryDark"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="133dp"
+            tools:layout_editor_absoluteY="275dp" />
 
-    <TextView
-        android:id="@+id/btnSignUpPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SING UP FOR GROCERIES"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="348dp"
-        tools:ignore="MissingConstraints"
-        android:onClick="btnSignUpClick"
-        android:layout_gravity="center"
-        android:textColor="@color/colorPrimaryDark"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            />
 
+        <TextView
+            android:id="@+id/btnSignUpPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SING UP FOR GROCERIES"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="348dp"
+            tools:ignore="MissingConstraints"
+            android:onClick="btnSignUpClick"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimaryDark"/>
 
+    </LinearLayout>
 
 </LinearLayout>

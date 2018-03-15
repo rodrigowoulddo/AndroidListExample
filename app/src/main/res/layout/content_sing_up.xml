@@ -9,65 +9,68 @@
     tools:showIn="@layout/activity_sing_up"
     android:orientation="vertical">
 
-    <Space
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
+        android:layout_margin="30dp"
+        android:background="#FFFFFF"
+        >
 
-    <ImageView
-        android:id="@+id/imgShopSignUp"
-        android:layout_width="120dp"
-        android:layout_height="75dp"
-        android:src="@drawable/online_store"
-        app:srcCompat="@drawable/online_store"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="44dp"
-        android:layout_gravity="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        />
+        <ImageView
+            android:id="@+id/imgShopSignUp"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/online_store"
+            app:srcCompat="@drawable/online_store"
+            android:layout_gravity="center"
+            />
 
-    <EditText
-        android:id="@+id/txtEmailSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email Aderess"
-        android:inputType="textMultiLine|textPersonName"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="143dp"
-        android:layout_gravity="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
-    <EditText
-        android:id="@+id/txtPasswordSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="199dp"
-        android:layout_gravity="center"/>
+        <EditText
+            android:id="@+id/txtEmailSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Email Aderess"
+            android:inputType="textMultiLine|textPersonName"
+            android:layout_gravity="center"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        />
+        <EditText
+            android:id="@+id/txtPasswordSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPersonName"
+            android:layout_gravity="center"
+            />
 
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="119dp"
-        android:layout_height="51dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="275dp"
-        tools:text="sign up"
-        android:layout_gravity="center"
-        android:textColor="@color/colorPrimaryDark"
-        />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="119dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:text="Sign up"
+            android:textColor="@color/colorPrimaryDark"
+            android:onClick="btnSignUpClick"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>

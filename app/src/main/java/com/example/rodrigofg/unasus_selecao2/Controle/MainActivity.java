@@ -1,9 +1,9 @@
 package com.example.rodrigofg.unasus_selecao2.Controle;
 
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.rodrigofg.unasus_selecao2.Modelo.Usuario;
 import com.example.rodrigofg.unasus_selecao2.R;
-import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -49,37 +48,41 @@ public class MainActivity extends AppCompatActivity {
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
 
-        if(verificarCredenciais(email, password))
+        if(verificarCredenciais(email, password)){
             abrirTelaGroceries();
+            resetarCampos();
+        }
+    }
+
+    private void resetarCampos() {
+        txtEmail.setText("");
+        txtPassword.setText("");
     }
 
     private boolean verificarCredenciais(String email, String password) {
 
+        if(email.equals("") || password.equals("")){
+            mostrarMsg("Insert the right information to sign in!");
+            return false;
+        }
 
-        List<Usuario> listaUsuarios = buscarUsuariosCadastrados();
+        List<Usuario> listaUsuarios = Usuario.buscarUsuariosCadastrados(this);
+        Usuario usuarioLogando = criarUsuario();
 
-        //COMPARAR COM USUARIO INSERIDO
+        if(listaUsuarios != null){
 
+            for (Usuario possivelUsuario: listaUsuarios) {
+                if(possivelUsuario.getEmail().equals(usuarioLogando.getEmail()) && possivelUsuario.getPassword().equals(usuarioLogando.getPassword()))
+                    return true;
+            }
 
-        return true;
+            mostrarMsg("The password you typed is not correct!");
+
+        }
+
+        return false;
     }
 
-    private List<Usuario> buscarUsuariosCadastrados(){
-
-        // Buscar credenciais no shared preferences
-        SharedPreferences sharedPref = this.getSharedPreferences(
-                "GROCERIES", Context.MODE_PRIVATE);
-
-        String jsonUsuarios = sharedPref.getString("USUARIOS","0");
-
-        if(jsonUsuarios.equals("0"))
-            return null;
-
-        Gson gson = new Gson();
-        List<Usuario> listaUsuarios = (List<Usuario>) gson.fromJson(jsonUsuarios, Usuario.class);
-
-        return listaUsuarios;
-    }
 
     private void abrirTelaSignUp() {
         Intent intentSignUp = new Intent(MainActivity.this, SingUpActivity.class);
@@ -89,6 +92,22 @@ public class MainActivity extends AppCompatActivity {
     private void abrirTelaGroceries() {
         Intent intentGroceries = new Intent(MainActivity.this, GroceriesActivity.class);
         startActivity(intentGroceries);
+    }
+
+    private Usuario criarUsuario(){
+
+        Usuario usuario = new Usuario();
+        usuario.setEmail(txtEmail.getText().toString());
+        usuario.setPassword(txtPassword.getText().toString());
+        return usuario;
+    }
+
+    private void mostrarMsg(String mensagem) {
+        new AlertDialog.Builder(this).setTitle("Attention!").setMessage(mensagem).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        }).create().show();
     }
 
 
